@@ -3,12 +3,28 @@ public class Ejercicio2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//tipo de dato entero
-		int entero=10;
-		//tipo de dato cadena
-		String cadena= "Una cadena";
-		System.out.print(entero);
-		System.out.print(cadena);
+		
+		//	Este es un comentqario de una linea
+
+		
+		/* 
+		 * Este es un comentario de
+		 * bloque 
+		*/
+		
+		
+		
+		/** 
+		 * Este es un comentario de Documentacion
+		 * Comienza con barra ** y termina con * barra
+		 * 
+		 * FORMATO
+		 * ===============
+		 * Programa HolaMundo
+		 * @author Silvia Carolina
+		 * @version 1.0
+		 * @see Referncias
+		 */
 	}
 
 }
