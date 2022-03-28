@@ -13,6 +13,7 @@ public class Ejercicio13 {
 		System.out.print("\n" +resultado);
 		resultado2 = 5*(float)1/4;// Solo parte entera
 		System.out.print("\n" +resultado2);
+		//cast: Conversion entre tipos 
 		System.out.print("\n" + (float)5*9/4);//11.25 muestra parte entera
 	}
 	
