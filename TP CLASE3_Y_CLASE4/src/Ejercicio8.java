@@ -11,9 +11,9 @@ public class Ejercicio8 {
 		// TODO Auto-generated method stub
 		
 		Scanner teclado=new Scanner(System.in);
-		System.out.print("Ingrese una cantidad de minutos:");
+		System.out.print("Ingrese una cantidad de segundos:");
 		int valor1=teclado.nextInt();
-		System.out.print (valor1);
+		System.out.print ("Corresponde a "+(valor1/60)+" minutos" );
 		//System.in.read();
 	}
 

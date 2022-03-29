@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Ejercicio1 {
 
@@ -6,12 +7,12 @@ public class Ejercicio1 {
 		Scanner teclado=new Scanner(System.in);
 		
 		System.out.print("Ingrese su nombre: ");
-		String nombre = teclado.nextString();
+		String nombre = teclado.nextLine();
 
 		System.out.print("Ingrese edad: ");
-		Scanner edad = teclado.nextInt();
+		int edad = teclado.nextInt();
 		
-		System.out.print("Mi nombre es:" +nombre+ " y mi edad es:" +edad+ "aï¿½os.");
+		System.out.print("Mi nombre es:" +nombre+ " y mi edad es:" +edad+ "años.");
 
 	}
 

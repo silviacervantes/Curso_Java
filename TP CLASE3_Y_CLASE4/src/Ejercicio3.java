@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
  * Declarar tres variables de tipo entero, asignar un valor 
  * cualquiera y mostrar el mayor y el menor.
@@ -6,9 +8,15 @@ public class Ejercicio3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int valor1 = 5;
-		int valor2 = 20;
-		int valor3 = 50;
+		Scanner teclado = new Scanner(System.in);
+		
+		System.out.print("Ingrese el 1er valor: ");
+		int valor1 = teclado.nextInt();
+		System.out.print("Ingrese el 2do valor: ");
+		int valor2 = teclado.nextInt();
+		System.out.print("Ingrese el 3er valor: ");
+		int valor3 = teclado.nextInt();
+		
 		int mayor;
 		int menor;
 		
