@@ -11,9 +11,11 @@ public class Ejercicio18 {
 		
 		System.out.print("Ingresar un nro natural (>0):");
 		int numero1 = teclado.nextInt();
+		
 		int digito = numero1;
 		int numero2 = numero1;
 		int numero3 = 0;
+		
 		while(numero2 > 0) {
 			digito = numero2%10;
 			numero3 = numero3*10+digito;
