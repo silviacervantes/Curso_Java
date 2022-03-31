@@ -6,7 +6,25 @@ import java.util.Scanner;
  */
 
 public class Ejercicio17 {
-
+	public static boolean canDigPares(int x) {
+		int numero=x;
+		int contador = 0;
+		//System.out.print(numero);
+		while(numero>0) {
+			if(((numero%10)%2)==0) {
+				contador=contador+1;
+			};
+			numero=numero/10;
+		}
+		//System.out.print(contador);
+		if((contador%2)==0&&contador!=0) {
+			return true;
+			//System.out.print("El numero "+numero1+" tiene "+cantidad+" de digitos pares");
+		}else {
+			return false;
+		}
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
@@ -17,31 +35,19 @@ public class Ejercicio17 {
 		
 		//defino el tipo array para la lista
 		int lista[] = new int[n];
-		char resultado[] = new char[n];
+		boolean resultado[] = new boolean[n];
 		
 		System.out.println("Ingrese la lista de numeros");
 		for(int i=0;i<n;i++) {
 			System.out.print("Elemento"+i+" : ");
 			lista[i]= teclado.nextInt();
-			int numero=lista[i];
-			int contador = 0;
-			//System.out.print(numero);
-			while(numero>0) {
-				if(((numero%10)%2)==0) {
-					contador=contador+1;
-				};
-				numero=numero/10;
-			}
-			//System.out.print(contador);
-			if((contador%2)==0&&contador!=0) {
-				resultado[i] = 'P';
-				//System.out.print("El numero "+numero1+" tiene "+cantidad+" de digitos pares");
-			}
+			resultado[i] = canDigPares(lista[i]);
+			
 		}	
 		System.out.println("Los numeros que tienen cantidad par de digitos pares es:");
 		for(int j=0;j<n;j++) {
 			//System.out.println(lista[j]);
-			if(resultado[j]=='P') {
+			if(resultado[j]) {
 				System.out.println("Elemento"+j+": "+lista[j]);
 			}
 		}
