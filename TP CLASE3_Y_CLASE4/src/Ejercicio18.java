@@ -21,6 +21,7 @@ public class Ejercicio18 {
 			numero3 = numero3*10+digito;
 			numero2 = numero2/10;
 		}
+		
 		if(numero1 == numero3) {
 			System.out.print("El numero es capicua");
 		}else {

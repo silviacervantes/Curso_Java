@@ -17,7 +17,9 @@ public class Ejercicio12 {
 		int total = 0;
 		System.out.println("Ingrese las edades ");
 		for(int i=1; i<=cantidad;i++) {
-			int edad = teclado.nextInt();
+			int edad = (int)(Math.random()*28);
+			//int edad = teclado.nextInt();
+			System.out.println(edad);
 			total = total + edad;
 		}
 		System.out.print("El promedio de las edades es de: "+((float)total/cantidad));

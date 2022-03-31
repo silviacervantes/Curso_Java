@@ -8,6 +8,19 @@ import java.util.Scanner;
 
 public class Ejercicio19 {
 
+	public static boolean esprimo(int x) {
+		boolean bandera = true;
+		int i=2;
+		while(i <= x/2) {
+			if(x%i ==0) {
+				bandera = false;
+				i = x+1;
+			}
+			i=++i;
+		}
+		return bandera;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
@@ -15,20 +28,12 @@ public class Ejercicio19 {
 		int k = teclado.nextInt();
 		
 		//Primos que le anteceden
+		System.out.println("Primos que le anteceden");
 		for(int j=2;j<k;j++) {
-			
-			int i=2;
-			boolean bandera = true;
-			while(i<j) {
-				if(j%i ==0) {
-					bandera = false;
-					i = j+1;
-				}
-				i=++i;
+			if( esprimo(j)) {
+				System.out.println(j+" ");	
 			}
-			if(bandera) {
-				System.out.print(j+" ");
-			}
+						
 			
 		}
 	}

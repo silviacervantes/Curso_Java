@@ -13,18 +13,7 @@ public class Ejercicio13 {
 		
 		System.out.print("Ingresar un nro natural (>0):");
 		int numero = teclado.nextInt();
-		
-/*		for(int i=numero; i>0;i--) {
-			if((i%2)==0) {
-				System.out.println(-i);
-			}
-		}
-		for(int i=1; i<numero;i++) {
-			if((i%2)==0) {
-				System.out.println(i);
-			}
-		}
-*/
+
 		for(int i=-numero; i<=numero;i++) {
 			if((i%2)==0 && (i!=0)) {
 				System.out.println(i);
