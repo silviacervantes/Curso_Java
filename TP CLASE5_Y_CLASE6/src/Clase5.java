@@ -9,7 +9,8 @@ public class Clase5 {
 		//ejercicio2();
 		//ejercicio3();
 		//ejercicio4();
-		ejercicio5();
+		//ejercicio5();
+		ejercicio6();
 	}
 	
 	/*
@@ -169,5 +170,29 @@ public class Clase5 {
 	 * Palíndromo: palabra o expresión que es igual si se lee de izquierda a 
 	 * derecha que de derecha a izquierda, por ejemplo, arenera.
 	 */
+	
+	public static void ejercicio6() {
+		esPalindromo("HOLOH");
+	}
+	
+	public static void esPalindromo(String cadena) {
+		int i=0;
+		int longitud = cadena.length();
+		boolean bandera = true;
+		while ((i<(longitud))&& bandera) {
+			System.out.println(cadena.substring(i,i+1));
+			System.out.println(cadena.substring(longitud-i-1,longitud-i));
+
+			if(cadena.substring(i,i+1) != cadena.substring(longitud-i-1,longitud-i)) {
+				bandera = false;
+			}
+			++i;
+		}
+		if (!bandera) {
+			System.out.print(cadena+" NO ES Plindromo");
+		}else {
+			System.out.print(cadena+" ES Plindromo");
+		}
+	}
 }
 
