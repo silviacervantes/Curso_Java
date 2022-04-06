@@ -172,26 +172,29 @@ public class Clase5 {
 	 */
 	
 	public static void ejercicio6() {
-		esPalindromo("HOLOH");
+		esPalindromo("CASAC");
 	}
 	
 	public static void esPalindromo(String cadena) {
 		int i=0;
 		int longitud = cadena.length();
 		boolean bandera = true;
-		while ((i<(longitud))&& bandera) {
-			System.out.println(cadena.substring(i,i+1));
-			System.out.println(cadena.substring(longitud-i-1,longitud-i));
-
-			if(cadena.substring(i,i+1) != cadena.substring(longitud-i-1,longitud-i)) {
+		String letra1;
+		String letra2;
+		
+		while ((i<(longitud-1)/2)&& bandera) {
+			System.out.println(cadena.charAt(i));
+			letra1 = cadena.substring(i,i+1);
+			letra2 = cadena.substring(longitud-1-i,longitud-i);
+			if( !letra1.equals(letra2)) {
 				bandera = false;
 			}
 			++i;
 		}
 		if (!bandera) {
-			System.out.print(cadena+" NO ES Plindromo");
+			System.out.print(cadena+" ==> NO ES Palindromo");
 		}else {
-			System.out.print(cadena+" ES Plindromo");
+			System.out.print(cadena+" ==> ES Palindromo");
 		}
 	}
 }
