@@ -172,7 +172,8 @@ public class Clase5 {
 	 */
 	
 	public static void ejercicio6() {
-		esPalindromo("CASAC");
+		//esPalindromo("CASAC");
+		esPalindromo2("CASAC");
 	}
 	
 	public static void esPalindromo(String cadena) {
@@ -197,5 +198,26 @@ public class Clase5 {
 			System.out.print(cadena+" ==> ES Palindromo");
 		}
 	}
-}
 
+
+public static void esPalindromo2(String cadena) {
+	int i=0;
+	int longitud = cadena.length();
+	boolean bandera = true;
+
+	while ((i<(longitud-1)/2)&& bandera) {
+		System.out.println(cadena.charAt(i));
+		if( !cadena.charAt(i).equals(cadena.charAt(longitud-i))) {
+			bandera = false;
+		}
+		++i;
+	}
+	if (!bandera) {
+		System.out.print(cadena+" ==> NO ES Palindromo");
+	}else {
+		System.out.print(cadena+" ==> ES Palindromo");
+	}
+}
+	
+}
+}
