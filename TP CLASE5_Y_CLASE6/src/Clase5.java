@@ -346,4 +346,7 @@ public static void mostrar_matriz(int[][] matriz) {
 		System.out.println();
 	}
 }
+/*
+ * 
+ */
 }
