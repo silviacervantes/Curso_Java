@@ -10,7 +10,10 @@ public class Clase5 {
 		//ejercicio3();
 		//ejercicio4();
 		//ejercicio5();
-		ejercicio6();
+		//ejercicio6();
+		//ejercicio7();
+		//ejercicio8();
+		ejercicio9();
 	}
 	
 	/*
@@ -173,7 +176,7 @@ public class Clase5 {
 	
 	public static void ejercicio6() {
 		//esPalindromo("CASAC");
-		esPalindromo2("CASAC");
+		esPalindromo2("ADasdjf");
 	}
 	
 	public static void esPalindromo(String cadena) {
@@ -184,7 +187,7 @@ public class Clase5 {
 		String letra2;
 		
 		while ((i<(longitud-1)/2)&& bandera) {
-			System.out.println(cadena.charAt(i));
+			//System.out.println(cadena.charAt(i));
 			letra1 = cadena.substring(i,i+1);
 			letra2 = cadena.substring(longitud-1-i,longitud-i);
 			if( !letra1.equals(letra2)) {
@@ -204,10 +207,14 @@ public static void esPalindromo2(String cadena) {
 	int i=0;
 	int longitud = cadena.length();
 	boolean bandera = true;
-
+	char letra1;
+	char letra2;
+	
 	while ((i<(longitud-1)/2)&& bandera) {
 		System.out.println(cadena.charAt(i));
-		if( !cadena.charAt(i).equals(cadena.charAt(longitud-i))) {
+		letra1 = cadena.charAt(i);
+		letra2 = cadena.charAt(longitud-1-i); 
+		if(letra1 !=letra2) {
 			bandera = false;
 		}
 		++i;
@@ -218,6 +225,125 @@ public static void esPalindromo2(String cadena) {
 		System.out.print(cadena+" ==> ES Palindromo");
 	}
 }
+
+/*
+ * Escriba un programa que determine la cantidad de vocales y consonantes 
+ * de una palabra
+ */
+
+public static void ejercicio7() {
+	int vocales;
+	int consonantes;
+	Scanner teclado = new Scanner(System.in);
 	
+	System.out.println("Ingrese una palabra:");
+	String palabra = teclado.next();
+	
+	vocales = nro_vocales(palabra);
+	consonantes = nro_consonantes(palabra);
+	
+	System.out.println("Cantidad de vocales: "+vocales);
+	System.out.println("Cantidad de consonantes: "+consonantes);
+	
+}
+
+public static int nro_vocales(String cadena) {
+	int cant_vocales=0;
+	char[] vocalSearch = {'A','E','I','O','U','a','e','i','o','u'}; 
+    
+    for(int i=0; i<cadena.length(); i++){
+        char letra = cadena.charAt(i);
+        for(int j=0; j<vocalSearch.length; j++){
+            if(vocalSearch[j] == letra){
+                ++cant_vocales; 
+            }
+        }
+    }
+    return cant_vocales;
+}
+                
+public static int nro_consonantes(String cadena) {
+	int cant_consonantes=0;
+	char[] consonantesSearch = {'B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','W','X','Y','Z','Ñ','b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z','ñ'}; 
+	
+    for(int i=0; i<cadena.length(); i++){
+        char letra = cadena.charAt(i);
+        for(int j=0; j<consonantesSearch.length; j++){
+            if(consonantesSearch[j] == letra){
+                ++cant_consonantes; 
+            }
+        }
+    }
+    return cant_consonantes;
+}
+
+/*
+ * Ingrese 10 nombres de personas en un vector, luego ingrese un nombre 
+ * cualquiera y búsquelo en el vector, si el nombre aparece en el vector 
+ * mostrar "Nombre encontrado" en caso contrario "Nombre no encontrado".
+ */
+
+public static void ejercicio8() {
+	String[] nombres = new String[3];
+	nombres = cargarVector();
+	Scanner teclado = new Scanner(System.in);
+	System.out.println("Ingrese el nombre a buscar:");
+	String nombre = teclado.next();
+	if(nombreSearch(nombre,nombres)) {
+		System.out.print("Se econtro");
+	}else {
+		System.out.print("No se encontro");
+	}
+	
+}
+
+public static String[] cargarVector() {
+	Scanner teclado = new Scanner(System.in);
+	String[] nombres = new String[3];
+	
+	for(int i=0;i<3;i++) {
+		System.out.print("Ingrese nombre "+i);
+		nombres[i] = teclado.next();
+	}
+	return nombres;
+}
+
+public static boolean nombreSearch(String nombre, String[] nombres) {
+	boolean b = false;
+	for(int i=0;i<3;i++) {
+		if(nombres[i].equals(nombre)) {
+			b = true;
+			break;
+		}
+	}
+	return b;
+}
+
+/*
+ * Crear una matriz de 3×3 con los números del 1 al 9. Mostrar por pantalla, 
+ * tal como aparece en la matriz.
+ */
+public static void ejercicio9() {
+	int[][] matriz = new int[3][3];
+	cargar_matriz(matriz);
+	mostrar_matriz(matriz);
+}
+
+public static void cargar_matriz(int[][] matriz) {
+	int m=0;
+	for(int i=0;i<3;i++) {
+		for(int j=0;j<3;j++) {
+			matriz[i][j]= ++m;
+		}
+		
+	}
+}
+public static void mostrar_matriz(int[][] matriz) {
+	for(int i=0;i<3;i++) {
+		for(int j=0;j<3;j++) {
+			System.out.print(matriz[i][j]+"\t"); 
+		}
+		System.out.println();
+	}
 }
 }
