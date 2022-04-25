@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class test {
@@ -20,7 +21,7 @@ public class test {
 		cuenta1.retirar(12.76);
 		cuenta1.mostrar();
 		
-		//
+		// EMPLEADO
 		System.out.println("DATOS DE EMPLEADO");
 		System.out.println("=================");
 		persona persona1 = new persona("Silvia","Cervantes",28374,"domicilio1");
@@ -28,10 +29,21 @@ public class test {
 		empleado1.verEmpleado();
 		System.out.print("CALCULO DE SUELDO: "+empleado1.calculoSueldo(8));
 
+		//Producto
 		System.out.println("DATOS DE PRODUCTO");
 		System.out.println("=================");
-		Producto producto1 = new Producto("Harina", 90.10, Date.);
+/*		String  requestDate = "2020-01-15";
+	    LocalDate myDate = LocalDate.parse(requestDate);
 
+	    LocalDate currentDate = LocalDate.now();
+
+	    long numberOFDays = DAYS.between(myDate, currentDate);*/
+
+		Producto producto1 = new Producto("Harina", 90.10, LocalDate.parse("2021-04-12"));
+		//producto1.mostrarProducto();
+		Perecedero producto2 = new Perecedero("Harina", 90.10, LocalDate.parse("2021-04-15"));
+		producto2.mostrarProducto();
+		System.out.println("Rebaja de precio por proximo Vto.: "+producto2.calcular());
 	}
 
 }
